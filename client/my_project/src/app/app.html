@@ -1,0 +1,21 @@
+<main class="main">
+  <div class="content">
+    <div class="upload-box">
+      <input type="file" (change)="onFileSelected($event)" />
+      <button (click)="uploadFile()" [disabled]="isUploading">Upload</button>
+
+      <!-- Progress Bar -->
+      <div *ngIf="progress >= 0 && isUploading" class="progress-text">
+        Upload Progress: {{ progress }}%
+      </div>
+
+      <!-- Loader While Uploading -->
+      <div *ngIf="isUploading && progress < 100" class="loader-section">
+        <p>Uploading... Please wait 🙏</p>
+        <div class="loader"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<router-outlet />

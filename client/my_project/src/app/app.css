@@ -1,0 +1,88 @@
+/* Center the content on screen */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of screen */
+  background-color: #f0f0f0;
+}
+
+/* Upload box styling */
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vh;
+  height: 50vh;
+  background-color: #dddded;
+  border-radius: 1px;
+  border-bottom: 10px solid #1c375b;;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Button and input spacing */
+.upload-box button {
+  padding: 10px 20px;
+  width: 150px;
+  height: 40px;
+  color: #534c5b;
+  font-size: 16px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.5s;
+  letter-spacing: 4px;
+  border: 1px solid #1c375b;
+  border-radius: 0px;
+  margin-left: 0%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.upload-box button:hover {
+  background: #1c375b;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #1c375b,
+              0 0 25px #1c375b,
+              0 0 50px #1c375b,
+              0 0 100px #1c375b;
+}
+
+/* Loader text and spacing */
+.upload-box p {
+  margin: 0;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Loader animation styles */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 10px solid #FFF;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  box-sizing: border-box;
+  inset: -10px;
+  border-radius: 50%;
+  border: 10px solid #FF3D00;
+  animation: prixClipFix 2s infinite linear;
+}
+
+@keyframes prixClipFix {
+  0%   { clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0); }
+  25%  { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0); }
+  50%  { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%); }
+  75%  { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%); }
+  100% { clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0); }
+}
+      
